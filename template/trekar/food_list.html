@@ -1,0 +1,22 @@
+<h2>Food List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Calories</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for food in foods %}
+      <tr>
+        <td>{{ food.name }}</td>
+        <td>{{ food.calories }}</td>
+        <td>
+          <a href="{% url 'edit_food' food.id %}">Edit</a>&nbsp;&nbsp;
+          <a href="{% url 'delete_food' food.id %}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
